@@ -18,12 +18,14 @@ namespace Explorer.API.Controllers.Proto
         public override async Task<AuthenticationTokens> Authorize(Credentials request,
             ServerCallContext context)
         {
-            //var credentials = new Stakeholders.API.Dtos.CredentialsDto { Password = request.Password, Username = request.Username };
-            var credentials = new Stakeholders.API.Dtos.CredentialsDto { Password = "somi", Username = "somi" };
+            var credentials = new Stakeholders.API.Dtos.CredentialsDto { Password = request.Password, Username = request.Username };
+            //var credentials = new Stakeholders.API.Dtos.CredentialsDto { Password = "somi", Username = "somi" };
             var result = _authenticationService.Login(credentials);
 
             //PROBLEM
             AuthenticationTokens test = new AuthenticationTokens();
+            test.Id = (int)result.Value.Id;
+            test.AccessToken = result.Value.AccessToken;
             //test.AccessToken = result.Value.AccessToken;
             //test.Id = result.Value.Id;
             return await Task.FromResult(test);

@@ -12,6 +12,18 @@
 
   },
   "profiles": {
+
+    "WebApplication2": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:44332;http://localhost:51712/",
+      "sslPort": 44332
+    },
+
+
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
