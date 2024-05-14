@@ -1,3 +1,4 @@
+using Explorer.API.Controllers.Proto;
 using Explorer.API.Startup;
 
 
@@ -11,6 +12,7 @@ builder.Services.ConfigureCors(corsPolicy);
 builder.Services.ConfigureAuth();
 builder.Services.AddHttpClient();
 builder.Services.RegisterModules();
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -34,6 +36,7 @@ app.UseAuthorization();
 app.UseStaticFiles();
 
 app.MapControllers();
+app.MapGrpcService<AuthenticationProtoController>();
 
 app.Run();
 
