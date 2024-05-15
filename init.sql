@@ -30,17 +30,6 @@ INSERT INTO stakeholders."Users"(
     (-8, 'luka', '$2a$12$DVn357kN0RhFGjVWFuWx7Oxd4sHrQ3oGEnJjkMdG1BhlNx7rPq3Fu', 2, true, 'https://imgs.search.brave.com/n8Gm53DmrCXkPu9d7FpTq1FLO8Nj00zDwzTlFac8HH4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oYW5kc29tZS10/b3VyaXN0LW1hbi1s/b29rLW1hcC13aGls/ZS1wb2ludGluZy1m/aW5nZXItZGlyZWN0/aW9uLWRlc3RpbmF0/aW9uLXRyYXZlbC1j/b25jZXBfNTY4NTQt/Mzk4NS5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw');
 
 
--- ******************** SHOPPING CART *******************************
-INSERT INTO payments."ShoppingCarts"(
-	"Id", "TouristId", "TotalPrice", "IsPurchased")
-	VALUES
-		(-1, -168, 0, false),
-		(-2, -169, 0, false),
-		(-3, -171, 0, false),
-		(-4, -172, 0, false),
-		(-5, -3, 0, false);
-
-
 -- ******************************** PEOPLE ********************************
 
 INSERT INTO stakeholders."People" ("Id", "UserId", "Name", "Surname", "Email", "Bio", "Motto") VALUES (-169, -169, 'Filip', 'Simic', 'fsimic346@gmail.com', NULL, 'Brt, guglaj o.0'),
@@ -55,75 +44,3 @@ INSERT INTO stakeholders."People" ("Id", "UserId", "Name", "Surname", "Email", "
 (-5, -6, 'Mile', 'Kitic', 'mile@gmail.com', 'I love tours.', 'Stay strong.'),
 (-6, -7, 'Zora', 'Belic', 'zore@gmail.com', 'I love tours.', 'Stay strong.'),
 (-7, -8, 'Lukas', 'Bale', 'nikola3444@gmail.com', 'I love tours.', 'Stay strong.');
-
--- ***************** WALLETS **********************
-INSERT INTO payments."Wallets"(
-	"Id", "TouristId", "AdventureCoin")
-	VALUES
-		(-1, -3, 10000),
-		(-2, -168, 200),
-		(-3, -169, 500),
-		(-4, -170, 400),
-		(-5, -171, 800),
-		(-6, -172, 150),
-		(-7, -4, 10000),
-		(-8, -5, 10000),
-		(-9, -6, 10000),
-		(-10, -7, 10000),
-		(-11, -8, 10000),
-		(-12, -4, 10000),
-		(-13, -5, 10000);
-
--- **************************** TOUR TOKENS ************************************
-INSERT INTO payments."tourTokens"(
-	"Id", "TourId", "TouristId")
-	VALUES  (-1, -21, -3),
-	 (-2, -21, -169),
-	 (-3, -21, -6),
-	 (-4, -21, -7),
-	 (-5, -21, -8),
-	 (-6, -22, -3),
-	 (-7, -22, -6),
-	 (-8, -22, -7),
-	 (-9, -25, -8),
-	 (-10, -27, -3),
-	 (-11, -27, -169),
-	 (-12, -21, -4),
-   (-13, -21, -5),
-	 (-14, -29, -4),
-	 (-15, -29, -5);
-
--- ******************************** FOLLOWERS ******************************
-
-INSERT INTO stakeholders."Followers" ("Id", "UserId", "FollowedById") VALUES (-1, -170, -169),
-(-2, -172, -169),
-(-3, -171, -169),
-(-4, -168, -169),
-(-5, -169, -168),
-(-6, -169, -170);
-
--- ******************************** BLOGS ********************************
-
-INSERT INTO blog."Blogs" ("Id", "Title", "Description", "Date", "Status", "AuthorId", "Votes", "VisibilityPolicy") VALUES (-11, 'Off-the-Beaten-Path Travel', '<p>Discover charming villages and secret natural havens off the tourist path. Immerse yourself in the heart of local cultures and explore hidden treasures. Pack your bags for an authentic travel experience!</p><p><br></p><p><img src="https://live.staticflickr.com/65535/53244354274_f096dbce42.jpg"></p><p><br></p><p>Join us on the road less traveled!</p>', '2023-11-14 00:00:00+01', 3, -170, '[{"UserId": -168, "VoteType": 1}, {"UserId": -170, "VoteType": 1}]', 0),
-(-12, 'Historical Wonders: Time Travel Edition', '<p>Step into history with ancient ruins and medieval castles. Explore the mysteries of past civilizations and witness the grandeur of medieval architecture. Join us on a captivating journey through time!</p><p><br></p><p><img src="https://live.staticflickr.com/65535/53280758885_34afd10b3a.jpg"></p><p><br></p><p>Walk the corridors of history with us!</p>', '2023-11-14 00:00:00+01', 1, -169, '[{"UserId": -168, "VoteType": 0}, {"UserId": -170, "VoteType": 0}]', 0),
-(-13, 'Urban Wanderlust: City Exploration', '<p>Delve into the heartbeat of vibrant cities! Explore bustling markets, iconic landmarks, and hidden gems within the urban landscape.</p><p>Immerse yourself in the culture and energy of city life.</p><p><br></p><p><img src="https://live.staticflickr.com/65535/53308142182_84983c1cc3.jpg"></p><p><br></p><p>Experience the pulse of the city with us!</p>', '2023-11-14 00:00:00+01', 0, -170, '[]', 0),
-(-14, 'Team building grupa 1 (produžeci)', '<p>Nastavak kod Dragana na svirku i drinkić</p><p><br></p><p><img src="https://cdn.discordapp.com/attachments/1165638888082124852/1174054126708064327/IMG-20231113-WA0004.jpg"></p>', '2023-11-14 00:00:00+01', 1, -170, '[]', 0),
-(-15, 'Team building grupa 1', '<p>Divno veče u ambijentu još divnijih ljudi huh</p><p><br></p><p><img src="https://cdn.discordapp.com/attachments/1165638888082124852/1174053744795734026/IMG-20231113-WA0006.jpg"></p>', '2023-11-14 00:00:00+01', 1, -170, '[]', 0);
-
-
-INSERT INTO blog."Comments" ("Id", "AuthorId", "BlogId", "CreatedAt", "UpdatedAt", "Text") VALUES (-1, -168, -11, '2023-11-14 13:49:10.108651+01', NULL, 'dobar blog!'),
-(-2, -168, -11, '2023-11-14 13:49:23.737314+01', NULL, 'opet sam procitao, i jos je bolji...'),
-(-4, -170, -14, '2023-11-14 13:49:10.108651+01', NULL, 'dobar blog!'),
-(-5, -171, -14, '2023-11-14 13:58:16.459035+01', NULL, 'mene na pivo ne zovete, a?'),
-(-6, -172, -14, '2023-11-14 13:49:10.108651+01', NULL, 'ni ja nisam pozvan 😔'),
-(-3, -169, -14, '2023-11-14 13:58:16.459035+01', NULL, 'drugi put');
-
--- **************************** COUPONS ************************************
-
-INSERT INTO payments."Coupons"(
-	"Id", "Code", "Discount", "TourId", "ExpirationDate", "AllFromAuthor", "AuthorId")
-	VALUES (-1, 'ZXItNZq3', 20, -21, '2023-12-29 01:00:00+01', true, -2);
-
--- **************************** TOUR SALES ************************************
-
-INSERT INTO payments."TourSales"("Id","AuthorId", "Name", "StartDate","EndDate","DiscountPercentage","TourIds") VALUES (-1, -2, 'Popust', '2023-12-27', '2023-12-31', 0.2,  '[-24]')
